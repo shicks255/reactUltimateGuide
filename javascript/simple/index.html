@@ -1,5 +1,15 @@
 <html>
 
+<head>
+    <script>
+        function submitButton() {
+            const userInput = document.getElementById('userInput2').value;
+            alert(userInput);
+        }
+    </script>
+    <script src="myFunctions.js"></script>
+</head>
+
 <body>
     <div>
         test
@@ -11,18 +21,28 @@
     <section>This is a section</section>
     <br/>
 
-    <form onSubmit="alert('hi')">
+    This is a form submit.  Submitting this uses an inline onSubmit function build into the
+    form element
+    <form onSubmit="alert(`hi ${document.getElementById('userInput').value}`)">
         <input  id="userInput" type="text" fo />
         <label for="userInput">Test</label>
         
         <button type="submit">Submit</button>
     </form>
 
-    <form onSubmit="alert('hi')">
-        <input  id="userInput" type="text" fo />
-        <label for="userInput">Test</label>
-        
-        <button type="submit">Submit</button>
-    </form>
+    This is just an input with a button.  Submitting this uses a javascript function
+    that was placed in the 'head>' of the document
+    <input  id="userInput2" type="text"/>
+    <label for="userInput2">Test</label>
+    <button type="submit" onclick="submitButton()">Submit</button>
+
+    <br/>
+    <br/>
+
+    This is an input with a button.  Submitting this uses a linked JS file
+    with the corresponding name of the onclick function
+    <input  id="userInput3" type="text"/>
+    <label for="userInput3">Test</label>
+    <button type="submit" onclick="linkedSubmitButton()">Submit</button>
 </body>
 </html>

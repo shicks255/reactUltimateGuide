@@ -1,0 +1,78 @@
+<html>
+
+<head>
+    <script>
+        function submitButton(id) {
+            const input = document.getElementById(`input-${id}`).value;
+
+            const result = document.getElementById(`${id}Result`);
+            result.textContent = input;
+        }
+
+        const fields = [
+            {
+                label: 'First',
+                id: 'first'
+            },
+            {
+                label: 'Last',
+                id: 'last'
+            },
+            {
+                label: 'Age',
+                id: 'age'
+            }
+        ]
+
+        function setupPage() {
+            const root = document.getElementById('root')
+
+            fields.forEach((field) => {
+
+                const label = document.createElement('label');
+                label.for = "test";
+                label.text = field.label;
+                label.textContent = field.label;
+                label.id = `label-${field.id}`;
+                root.appendChild(label);
+
+                const input = document.createElement('input');
+                input.type = 'text';
+                input.id = `input-${field.id}`;
+                root.appendChild(input);
+
+                const button = document.createElement('button');
+                button.addEventListener('click', () => submitButton(field.id));
+                button.textContent = 'Update';
+                root.appendChild(button);
+                root.appendChild(document.createElement('br'));
+            })
+        }
+
+        window.onload = () => setupPage();
+
+    </script>
+</head>
+
+<body>
+    <div>
+        <table border="1">
+            <tbody>
+                <tr>
+                    <td>First Name</td>
+                    <td>Last Name</td>
+                    <td>Age</td>
+                </tr>
+                <tr>
+                    <td id="firstResult">?</td>
+                    <td id="lastResult">?</td>
+                    <td id="ageResult">?</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <br/>
+    <div id="root" />
+
+</body>
+</html>

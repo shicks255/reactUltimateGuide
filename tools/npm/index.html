@@ -1,0 +1,44 @@
+<head>
+
+    <!-- this wont work because we're trying to use _ before its script has been loaded -->
+    <script>
+        console.log(_.inRange(2,1,3));
+    </script>
+    <script>
+        function checkNumber() {
+            const searchNumber = document.getElementById("searchNumber").value;
+            const lowerBound = document.getElementById("lowerBound").value;
+            const upperBound = document.getElementById("upperBound").value;
+            
+            const numberIsInRange = _.inRange(searchNumber, lowerBound, upperBound);
+            console.log(numberIsInRange);
+            
+            const resultBox = document.getElementById("result");
+            resultBox.textContent = `${searchNumber} ${numberIsInRange ? 'is' : 'is not'} between ${lowerBound} and ${upperBound}`
+        }
+        
+    </script>
+    <script src="./node_modules/lodash/lodash.min.js"></script>
+</head>
+
+<body>
+
+    <input id="searchNumber" type="text">
+    <label>Search Number</label>
+    <br/>
+
+    <input id="lowerBound" type="text">
+    <label>Lower Bound</label>
+    <br/>
+
+    <input id="upperBound" type="text">
+    <label>Upper Bound</label>
+    <br/>
+
+    <button onclick="checkNumber()">Check Number</button>
+
+    <div id="result">
+        <span id="result" />
+    </div>
+
+</body>

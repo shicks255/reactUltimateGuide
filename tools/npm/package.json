@@ -1,0 +1,20 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "description": "first",
+  "main": "index.js",
+  "scripts": {
+    "clean": "rm -rf node_nodules",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "open index.html"
+  },
+  "author": "steven hicks",
+  "license": "ISC",
+  "dependencies": {
+    "lodash": "4.17.21",
+    "moment": "2.29.4"
+  },
+  "devDependencies": {
+    "open": "^8.4.0"
+  }
+}

@@ -1,8 +1,9 @@
+## Basic HTML
 this is for HTML
 
 notice in the simple.html file
 
-CSS
+## CSS
 
 styles are applied
 see css/simple.html an example of styles applied inline
